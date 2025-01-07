@@ -1,0 +1,1 @@
+const blueSquareRotate = '/view/blueSquareRotate';
