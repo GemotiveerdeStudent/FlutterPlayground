@@ -1,23 +1,28 @@
+import 'constants/routes.dart';
 import 'package:flutter/material.dart';
 import 'views/blue_square_rotate.dart';
 import 'views/chained_animation.dart';
-import 'constants/routes.dart';
+import 'views/three_dimensional_animation.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(MaterialApp(
-    theme: ThemeData(brightness: Brightness.dark),
-    darkTheme: ThemeData(brightness: Brightness.dark),
-    themeMode: ThemeMode.dark,
-    debugShowCheckedModeBanner: false,
-    debugShowMaterialGrid: false,
-    home: const HomePage(),
-    routes: {
-      blueSquareRotate: (context) => const BlueSquareRotateView(),
-      chainedAnimation: (context) => const ChainedAnimationView(),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      theme: ThemeData(brightness: Brightness.dark),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
+      home: const HomePage(),
+      routes: {
+        blueSquareRotate: (context) => const BlueSquareRotateView(),
+        chainedAnimation: (context) => const ChainedAnimationView(),
+        threeDimensionalAnimation: (context) =>
+            const ThreeDimensionalAnimationView(),
+      },
+    ),
+  );
 }
 
 class HomePage extends StatefulWidget {
@@ -31,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> buttonConfigs = [
     {'text': 'Blue Square Rotate', 'route': blueSquareRotate},
     {'text': 'Chained Animation', 'route': chainedAnimation},
-    {'text': 'Green Square Rotate', 'route': '/greenSquareRotate'},
+    {'text': '3D Animation', 'route': threeDimensionalAnimation},
     {'text': 'Yellow Square Rotate', 'route': '/yellowSquareRotate'},
     // Add more button configurations here
   ];
