@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class BlueSquareRotateView extends StatefulWidget {
-  const BlueSquareRotateView({Key? key}) : super(key: key);
+  const BlueSquareRotateView({super.key});
 
   @override
   _BlueSquareRotateViewState createState() => _BlueSquareRotateViewState();
@@ -24,6 +24,8 @@ class _BlueSquareRotateViewState extends State<BlueSquareRotateView>
       begin: 0.0,
       end: 2 * pi,
     ).animate(_controller);
+
+    _controller.repeat();
   }
 
   @override
@@ -39,25 +41,33 @@ class _BlueSquareRotateViewState extends State<BlueSquareRotateView>
         title: const Text('Blue Square Rotate'),
       ),
       body: Center(
-        child: RotationTransition(
-          turns: _animation,
-          child: Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.5),
-                  blurRadius: 5,
-                  spreadRadius: 7,
-                  offset: const Offset(0, 3),
+        child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return Transform(
+                alignment: Alignment
+                    .center, // The place where it is rotating from, it's rotating alongside the middle now. ( like someone is holding it in the middle and rotating it )
+                transform: Matrix4.identity()
+                  ..rotateY(_animation
+                      .value), // Matrix identitity is like saying offset 0.
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        blurRadius: 5,
+                        spreadRadius: 7,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
                 ),
-              ],
-            ),
-          ),
-        ),
+              );
+            }),
       ),
     );
   }
