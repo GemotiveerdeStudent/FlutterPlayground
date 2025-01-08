@@ -51,7 +51,6 @@ class _HeroAnimationViewState extends State<HeroAnimationView> {
               person.emoji,
               style: const TextStyle(
                 fontSize: 40,
-                fontFamily: 'NotoColorEmoji',
               ),
             ),
             title: Text(person.name),
