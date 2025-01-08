@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'views/blue_square_rotate.dart';
+import 'views/chained_animation.dart';
 import 'constants/routes.dart';
 
 void main() {
@@ -14,6 +15,7 @@ void main() {
     home: const HomePage(),
     routes: {
       blueSquareRotate: (context) => const BlueSquareRotateView(),
+      chainedAnimation: (context) => const ChainedAnimationView(),
     },
   ));
 }
@@ -28,7 +30,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> buttonConfigs = [
     {'text': 'Blue Square Rotate', 'route': blueSquareRotate},
-    {'text': 'Red Square Rotate', 'route': '/redSquareRotate'},
+    {'text': 'Chained Animation', 'route': chainedAnimation},
     {'text': 'Green Square Rotate', 'route': '/greenSquareRotate'},
     {'text': 'Yellow Square Rotate', 'route': '/yellowSquareRotate'},
     // Add more button configurations here
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/settings');
+              Navigator.pushNamed(context, '/menu');
             },
             icon: const Icon(Icons.menu),
           ),
