@@ -75,7 +75,7 @@ class _ThreeDimensionalAnimationViewState
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Title'),
+        title: const Text('3D Animation'),
       ),
       body: SafeArea(
         child: Column(

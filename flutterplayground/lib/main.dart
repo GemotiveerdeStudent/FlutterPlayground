@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'views/blue_square_rotate.dart';
 import 'views/chained_animation.dart';
 import 'views/three_dimensional_animation.dart';
+import 'views/hero_animation.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +21,7 @@ void main() {
         chainedAnimation: (context) => const ChainedAnimationView(),
         threeDimensionalAnimation: (context) =>
             const ThreeDimensionalAnimationView(),
+        heroAnimation: (context) => const HeroAnimationView(),
       },
     ),
   );
@@ -37,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     {'text': 'Blue Square Rotate', 'route': blueSquareRotate},
     {'text': 'Chained Animation', 'route': chainedAnimation},
     {'text': '3D Animation', 'route': threeDimensionalAnimation},
-    {'text': 'Yellow Square Rotate', 'route': '/yellowSquareRotate'},
+    {'text': 'Hero Animation', 'route': heroAnimation},
     // Add more button configurations here
   ];
 
