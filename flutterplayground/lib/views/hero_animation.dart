@@ -47,10 +47,13 @@ class _HeroAnimationViewState extends State<HeroAnimationView> {
                         )),
               );
             },
-            leading: Text(
-              person.emoji,
-              style: const TextStyle(
-                fontSize: 40,
+            leading: Hero(
+              tag: person.name,
+              child: Text(
+                person.emoji,
+                style: const TextStyle(
+                  fontSize: 40,
+                ),
               ),
             ),
             title: Text(person.name),
@@ -75,8 +78,45 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          person.emoji,
+        title: Hero(
+          flightShuttleBuilder: (
+            context,
+            animation,
+            direction,
+            fromContext,
+            toContext,
+          ) {
+            switch (direction) {
+              case HeroFlightDirection.push:
+                return Material(
+                  color: Colors.transparent,
+                  child: ScaleTransition(
+                      scale: animation.drive(
+                        Tween<double>(
+                          begin: 0.0,
+                          end: 1.0,
+                        ).chain(
+                          CurveTween(
+                            curve: Curves.fastOutSlowIn,
+                          ),
+                        ),
+                      ),
+                      child: toContext.widget),
+                );
+              case HeroFlightDirection.pop:
+                return Material(
+                  color: Colors.transparent,
+                  child: fromContext.widget,
+                );
+            }
+          },
+          tag: person.name,
+          child: Text(
+            person.emoji,
+            style: const TextStyle(
+              fontSize: 50,
+            ),
+          ),
         ),
       ),
       body: Center(

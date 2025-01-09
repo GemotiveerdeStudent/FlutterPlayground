@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
     {'text': 'Chained Animation', 'route': chainedAnimation},
     {'text': '3D Animation', 'route': threeDimensionalAnimation},
     {'text': 'Hero Animation', 'route': heroAnimation},
+    {'text': 'Implicit animation', 'route': implicitAnimation},
     // Add more button configurations here
   ];
 
