@@ -4,6 +4,8 @@ import 'views/blue_square_rotate.dart';
 import 'views/chained_animation.dart';
 import 'views/three_dimensional_animation.dart';
 import 'views/hero_animation.dart';
+import 'views/implicit_animation.dart';
+import 'views/tween_animation.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +24,8 @@ void main() {
         threeDimensionalAnimation: (context) =>
             const ThreeDimensionalAnimationView(),
         heroAnimation: (context) => const HeroAnimationView(),
+        implicitAnimation: (context) => const ImplicitAnimationView(),
+        tweenAnimation: (context) => const TweenAnimationView(),
       },
     ),
   );
@@ -40,7 +44,9 @@ class _HomePageState extends State<HomePage> {
     {'text': 'Chained Animation', 'route': chainedAnimation},
     {'text': '3D Animation', 'route': threeDimensionalAnimation},
     {'text': 'Hero Animation', 'route': heroAnimation},
-    {'text': 'Implicit animation', 'route': implicitAnimation},
+    {'text': 'Implicit Animation', 'route': implicitAnimation},
+    {'text': 'Tween Animation', 'route': tweenAnimation},
+    {'text': '-', 'route': implicitAnimation},
     // Add more button configurations here
   ];
 
