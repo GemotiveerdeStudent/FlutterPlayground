@@ -1,3 +1,5 @@
+import 'package:flutterplayground/views/custom_painter_polygon.dart';
+
 import 'constants/routes.dart';
 import 'package:flutter/material.dart';
 import 'views/blue_square_rotate.dart';
@@ -26,6 +28,7 @@ void main() {
         heroAnimation: (context) => const HeroAnimationView(),
         implicitAnimation: (context) => const ImplicitAnimationView(),
         tweenAnimation: (context) => const TweenAnimationView(),
+        customPainterPolygon: (context) => const CustomPainterPolygonView(),
       },
     ),
   );
@@ -46,7 +49,8 @@ class _HomePageState extends State<HomePage> {
     {'text': 'Hero Animation', 'route': heroAnimation},
     {'text': 'Implicit Animation', 'route': implicitAnimation},
     {'text': 'Tween Animation', 'route': tweenAnimation},
-    {'text': '-', 'route': implicitAnimation},
+    {'text': 'PainterPolygon', 'route': customPainterPolygon},
+
     // Add more button configurations here
   ];
 
