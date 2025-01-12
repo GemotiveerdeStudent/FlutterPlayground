@@ -49,7 +49,8 @@ class _HomePageState extends State<HomePage> {
     {'text': 'Hero Animation', 'route': heroAnimation},
     {'text': 'Implicit Animation', 'route': implicitAnimation},
     {'text': 'Tween Animation', 'route': tweenAnimation},
-    {'text': 'PainterPolygon', 'route': customPainterPolygon},
+    {'text': 'Painter Polygon', 'route': customPainterPolygon},
+    {'text': 'Animated Prompt', 'route': animatedPrompt},
 
     // Add more button configurations here
   ];

@@ -5,3 +5,4 @@ const heroAnimation = '/view/heroAnimation';
 const implicitAnimation = '/view/implicitAnimation';
 const tweenAnimation = '/view/tweenAnimation';
 const customPainterPolygon = '/view/customPainterPolygon';
+const animatedPrompt = '/view/animatedPrompt';
