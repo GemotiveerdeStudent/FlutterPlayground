@@ -1,4 +1,6 @@
+import 'package:flutterplayground/views/animated_prompt.dart';
 import 'package:flutterplayground/views/custom_painter_polygon.dart';
+import 'package:flutterplayground/views/three_dimensional_drawer.dart';
 
 import 'constants/routes.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +31,11 @@ void main() {
         implicitAnimation: (context) => const ImplicitAnimationView(),
         tweenAnimation: (context) => const TweenAnimationView(),
         customPainterPolygon: (context) => const CustomPainterPolygonView(),
+        threeDimensionalDrawer: (context) => ThreeDimensionalDrawerView(
+              drawer: const Center(child: Text('Drawer Content')),
+              child: const Center(child: Text('Main Content')),
+            ),
+        animatedPrompt: (context) => const AnimatedPromptView(),
       },
     ),
   );
@@ -74,9 +81,9 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.count(
-          crossAxisCount: 2, // Number of columns
-          mainAxisSpacing: 20, // Spacing between rows
-          crossAxisSpacing: 20, // Spacing between columns
+          crossAxisCount: 3, // Number of columns
+          mainAxisSpacing: 10, // Spacing between rows
+          crossAxisSpacing: 10, // Spacing between columns
           children: List.generate(buttonConfigs.length, (index) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
